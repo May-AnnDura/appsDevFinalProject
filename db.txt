@@ -1,0 +1,19 @@
+CREATE TABLE [dbo].[BOOKS] (
+    [BOOK_ID]          INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    [TITLE]            VARCHAR (100) NULL,
+    [AUTHOR]           VARCHAR (50)  NULL,
+    [PUBLICATION_YEAR] INT           NULL,
+    [PRICE]            DECIMAL (10,2)  NULL,
+    [STOCK]            INT  NULL,
+);
+
+
+
+
+CREATE TABLE [dbo].[ORDERS] (
+    [ORDER_ID]         INT           IDENTITY (1, 1) PRIMARY KEY NOT NULL,
+    [QUANTITY] INT,
+    [TOTAL_PRICE] DECIMAL(10,2),
+    FOREIGN KEY ([BOOK_ID]) REFERENCES [dbo].[BOOKS] ([BOOK_ID])
+
+);
